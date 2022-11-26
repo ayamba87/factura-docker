@@ -35,7 +35,7 @@ jobs:
           password: ${{secrets.DOCKERHUB_TOKEN}}
           
       - name: Test
-        run: go test -v ./...          
+        run: npm run test:unit         
 
       # Runs a single command using the runners shell
       - 
