@@ -34,6 +34,8 @@ jobs:
           username: ${{secrets.DOCKERHUB_USERNAME}}
           password: ${{secrets.DOCKERHUB_TOKEN}}
           
+      - name: Test
+        run: go test -v ./...          
 
       # Runs a single command using the runners shell
       - 
@@ -41,4 +43,4 @@ jobs:
         uses: docker/build-push-action@v3
         with: 
           push: true
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/cimipagina:latest
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/factura-docker:latest
