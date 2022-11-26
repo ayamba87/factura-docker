@@ -33,9 +33,12 @@ jobs:
         with: 
           username: ${{secrets.DOCKERHUB_USERNAME}}
           password: ${{secrets.DOCKERHUB_TOKEN}}
-          
+      
+      - name: package
+        run: npm i @vue/cli-service
+        
       - name: Test
-        run: npm run test:unit         
+        run: npm run test:unit
 
       # Runs a single command using the runners shell
       - 
